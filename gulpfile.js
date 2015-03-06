@@ -6,11 +6,13 @@ var notify = require ( 'gulp-notify' );
 // Here we define the list of things to happen when we run gulp styles
 gulp.task( 'styles', function() {
 	gulp.src( 'assets/styles.scss' )
-	.pipe( sass())
-	.pipe( gulp.dest('styles.css' ))
+	.pipe( sass({
+		errLogToConsole: true
+		}))
+	.pipe( gulp.dest('.' ))
 	.pipe( notify ( 'CSS Compiled' ));
 	});
 
 gulp.task( 'watch', function() {
-	gulp.watch('assets/*.scss',['styles'])
+	gulp.watch('**/*.scss',['styles'])
 	});
