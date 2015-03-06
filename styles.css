@@ -1,0 +1,309 @@
+/* line 1, assets/_normalize.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+  display: block;
+}
+
+/* line 1, assets/_normalize.scss */
+audio, canvas, video {
+  display: inline-block;
+}
+
+/* line 1, assets/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 1, assets/_normalize.scss */
+[hidden] {
+  display: none;
+}
+
+/* line 1, assets/_normalize.scss */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 1, assets/_normalize.scss */
+a:focus {
+  outline: thin dotted;
+}
+
+/* line 1, assets/_normalize.scss */
+a:active, a:hover {
+  outline: 0;
+}
+
+/* line 1, assets/_normalize.scss */
+h1 {
+  font-size: 2em;
+}
+
+/* line 1, assets/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 1, assets/_normalize.scss */
+b, strong {
+  font-weight: 700;
+}
+
+/* line 1, assets/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/* line 1, assets/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/* line 1, assets/_normalize.scss */
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+/* line 1, assets/_normalize.scss */
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* line 1, assets/_normalize.scss */
+q {
+  quotes: \201C \201D \2018 \2019;
+}
+
+/* line 1, assets/_normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/* line 1, assets/_normalize.scss */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 1, assets/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 1, assets/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 1, assets/_normalize.scss */
+img {
+  border: 0;
+}
+
+/* line 1, assets/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 1, assets/_normalize.scss */
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: .35em .625em .75em;
+}
+
+/* line 1, assets/_normalize.scss */
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+
+/* line 1, assets/_normalize.scss */
+button, input {
+  line-height: normal;
+}
+
+/* line 2, assets/_normalize.scss */
+button, html input[type=button],
+input[type=reset], input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+/* line 2, assets/_normalize.scss */
+button[disabled], input[disabled] {
+  cursor: default;
+}
+
+/* line 2, assets/_normalize.scss */
+input[type=checkbox], input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* line 2, assets/_normalize.scss */
+input[type=search] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 2, assets/_normalize.scss */
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 2, assets/_normalize.scss */
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+/* line 2, assets/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 2, assets/_normalize.scss */
+body, figure {
+  margin: 0;
+}
+
+/* line 2, assets/_normalize.scss */
+legend, button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 4, assets/_normalize.scss */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+/* line 6, assets/_normalize.scss */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 21, assets/styles.scss */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  background: #26122c url("assets/images/girlstown.png") no-repeat center fixed;
+  background-size: cover;
+}
+
+/* line 32, assets/styles.scss */
+.wrapper {
+  font-size: 3rem;
+  font-family: sans-serif;
+  color: ghostwhite;
+  text-shadow: 0 1px 3px black;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* line 38, assets/styles.scss */
+p {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+/* line 42, assets/styles.scss */
+.q {
+  z-index: 10;
+  width: 100%;
+  background: transparent;
+  color: #f5f5f5;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  position: relative;
+  display: block;
+  float: right;
+  padding: 0.8em;
+}
+
+/* line 58, assets/styles.scss */
+.q:focus,
+.q:hover {
+  opacity: 1;
+  transition-delay: 0.3s;
+  background: rgba(38, 18, 44, 0.8);
+  outline: none;
+  border: none;
+}
+
+/* line 66, assets/styles.scss */
+.searchLabel {
+  -webkit-user-select: none;
+  position: relative;
+  width: 100%;
+  color: ghostwhite;
+  text-align: center;
+  display: inline-block;
+  float: right;
+  padding: 0 1em;
+}
+/* line 76, assets/styles.scss */
+.searchLabel span {
+  position: relative;
+  display: block;
+  padding: 5px 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 86, assets/styles.scss */
+.searchLabel:before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 4em;
+  background: goldenrod;
+  transform: perspective(1000px) rotate3d(1, 0, 0, 90deg);
+  transform-origin: 50% 100%;
+  transition: transform 0.3s;
+}
+
+/* line 99, assets/styles.scss */
+.searchLabel:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1rem;
+  background: ghostwhite;
+  transform-origin: 50% 0%;
+  transition: transform 0.3s;
+}
+
+/* line 111, assets/styles.scss */
+.button {
+  visibility: hidden;
+}
