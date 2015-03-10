@@ -10,36 +10,18 @@ app.init = function(){
 		// remove 'the', 'a', 'and', 'an', and/or 'or' from search query:
 
 		// if it is at the beginning of the title, completely remove
-		var regEx = /(^)(the|a|and|an|or)(\s|$)/i;
-		Title = Title.replace(regEx, '');
+		// var regEx = /(^)(the|a|and|an|or)(\s|$)/i;
+		// Title = Title.replace(regEx, '');
 
 		// if it is between two words, replace with a space
-		var regEx = /(\s)(the|a|and|an|or)(\s)/i;
-		Title = Title.replace(regEx, ' ');
+		// var regEx = /(\s)(the|a|and|an|or)(\s)/i;
+		// Title = Title.replace(regEx, ' ');
 
 		console.log(Title);
-		app.getImdbID(Title);
+		app.getMovie(Title);
 		//app.getMovie(Title);
 	}); // end function(e);
 };// end app.init();
-
-//ajax call takes the search term and gets imdb id
-app.getImdbID = function(Title) {
-	$.ajax({
-		url : 'http://www.omdbapi.com/?',
-		type : 'GET',
-		dataType : 'jsonp',
-		data :{
-			t : Title
-		},
-		success : function(results) {
-			console.log( 'This worked ok' + results.imdbID );
-			return results.imdbID;
-
-			app.getMovie(results.imdbID);
-		}
-	}); // end ajax call
-}; // end app.getImdbID();
 
 // ajax call to retrieve information from bechdel api
 app.getMovie = function(Title) {
@@ -49,7 +31,7 @@ app.getMovie = function(Title) {
 		dataType : 'jsonp',
 		data : {
 				format : 'json',
-				title : Title, 
+				title : encodeURI(Title), 
 			},
 		success : function(results){
  			console.log('the result is ', results);
