@@ -1,5 +1,5 @@
 var app = {};
-
+var numMovies = "";
 app.url = 'http://bechdeltest.com/api/v1/getMoviesByTitle';
 
 app.init = function(){
@@ -15,6 +15,7 @@ app.init = function(){
 
 // ajax call to retrieve information from bechdel api
 app.getMovie = function(Title) {
+	
 	$.ajax({
 		url : './api.php',
 		type : 'GET',
@@ -24,6 +25,12 @@ app.getMovie = function(Title) {
 				title : encodeURI(Title), 
 			},
 		success : function(results){
+			numMovies = results.length;
+
+			if (numMovies === 0) {
+				console.log("nothing");
+				$('#displayResults').after('<p>¯\\_(ツ)_/¯ Looks like nothing matches. Try again.</p>');
+			}
  			app.displayTitle(results);
 		}
 	}); // end ajax call
@@ -58,10 +65,10 @@ app.displayTitle = function(results) {
 			//display affirmation
 			console.log( 'it passes!' );
 			div.append(app.imgYes);
-		} else if ( results == undefined || results == null || results.length == 0) {
+		} else if ( results == undefined || results == null || results.length === 0) {
 			// no results, try again
 			console.log( 'there are no results' );
-			div.append(app.imgNone);		
+			div.append(app.imgNone);	
 		} else {
 			console.log( 'this movie may not have and strong female characters. Why don\'t you try something else.' );
 			//display negative reading
