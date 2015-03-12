@@ -2,20 +2,28 @@
 
 @mixin header {
 	font-size: 3rem;
-	font-family: sans-serif;
+	font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
 	color: ghostwhite;
 	text-shadow: 0 1px 3px black;
 	text-align: center;
+  line-height: 1.5rem;
 }
 
 @mixin bodyText {
+  font-family: 'Gentium Book Basic', serif;
 	font-size: 2.5rem;
 	text-align: center;
+  line-height: 3.5rem;
 }
 
 @mixin form {
 
 }
+
+///////////////////////////
+// M A I N S T Y L I N G //
+///////////////////////////
 
 html,
 body {
@@ -25,9 +33,7 @@ body {
 	font-size: 10px;
 	background: rgb(38, 18, 44) url("assets/images/girlstown.png") no-repeat center fixed;
 	background-size: cover;
-
 }
-
 
 .wrapper {
 	@include header;
@@ -35,8 +41,24 @@ body {
 	margin: 0 auto;
 }
 
+.fancy {
+}
+
 p {
 	@include bodyText;
+}
+
+.particularFilm p {
+  @include header;
+}
+
+///////////////////////////
+// F O R M S T Y L I N G //
+///////////////////////////
+
+.search {
+  width: 70%;
+  margin: 0 auto;
 }
 
 .q {
@@ -116,3 +138,43 @@ p {
   margin: 60px;
 }
 
+///////////////////////////////////
+// R E S U L T S   S T Y L I N G //
+///////////////////////////////////
+
+
+
+path {
+  fill: white;
+}
+
+.particularFilm {
+
+  .moTitle {
+    // text-align: center;
+    // margin: 0 auto;
+    // position: absolute;
+    // left: 55%;
+    // top: 100%;
+    // max-width: 200px;
+    // line-height: 3.5rem;
+  }
+
+  .yesGO, .noStop {
+    // left: -191px;
+    // top: -27px;
+  }
+
+  img {
+    display: inline;
+    width: 45%;
+    position: relative;
+  }
+
+  p {
+    // display: inline;
+    // position: relative;
+    // margin: 0;
+    // padding: 0;
+  }
+}

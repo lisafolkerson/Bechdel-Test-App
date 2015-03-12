@@ -24,8 +24,6 @@ app.getMovie = function(Title) {
 				title : encodeURI(Title), 
 			},
 		success : function(results){
- 			console.log('the result is ', results);
-
  			app.displayTitle(results);
 		}
 	}); // end ajax call
@@ -33,11 +31,12 @@ app.getMovie = function(Title) {
 
 // loop to display movies that match search query
 app.displayTitle = function(results) {
-	// clear old results and form info so new information can be searched
+	// clear old results and form info so new information can be searched as results are displayed
 	$( '#displayResults' ).empty();
 	$('#film-input').val('');
 
 	var numMovies = results.length;
+
 	for (i = 0; i < numMovies; i++) {
 		console.log( 'ready to display ' + results[i].title + ' and rating ' + results[i].rating );
 
@@ -46,12 +45,12 @@ app.displayTitle = function(results) {
 		var rating = results[i].rating;
  
 		// store information in html elements to add into page
-		var div = $( '<div>' ).addClass( 'particularFilm' );
-		var p = $( '<p>' ).text( results[i].title );
+		var div = $( '<div>' ).addClass( 'particularFilm', 'clearfix' );
+		var p = $( '<p class="moTitle">' ).text( results[i].title );
 
 		// set variable to return in different instances
-		app.imgYes = '<img src="assets/images/noun_40214_cc.svg">' + '<p>PASS</p>';
-		app.imgNo = '<img src="assets/images/noun_43299_cc.svg">' + '<p>FAIL</p>';
+		app.imgYes = '<img src="assets/images/noun_40214_cc.svg">' + '<p class="yesGO">PASS</p>';
+		app.imgNo = '<img src="assets/images/noun_43299_cc.svg">' + '<p class="noStop">FAIL</p>';
 		app.imgNone = '<p>¯\_(ツ)_/¯ Looks like nothing matches. Try again.</p>';
 
 		// if/else for if movie passes or not
@@ -69,14 +68,14 @@ app.displayTitle = function(results) {
 			div.append(app.imgNo);
 		}; // end if/else
 
-
+		//add title of film to div that will be appended to main page
 		div.append(p);
 		// add div with all results to main page
 		$( '#displayResults' ).append(div);
 
 		// make an array of different movie screen caps to cylce through as backgrounds  and be suggestions for movies to watch that pass the bechdel test
 
-	};
+	}; // end for loop
 }; //end app.dispayTitle():
 
 

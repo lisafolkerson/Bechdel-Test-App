@@ -141,16 +141,33 @@ html, body {
 
 .wrapper {
   font-size: 3rem;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
   color: ghostwhite;
   text-shadow: 0 1px 3px black;
   text-align: center;
+  line-height: 1.5rem;
   width: 90%;
   margin: 0 auto; }
 
 p {
+  font-family: 'Gentium Book Basic', serif;
   font-size: 2.5rem;
-  text-align: center; }
+  text-align: center;
+  line-height: 3.5rem; }
+
+.particularFilm p {
+  font-size: 3rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  color: ghostwhite;
+  text-shadow: 0 1px 3px black;
+  text-align: center;
+  line-height: 1.5rem; }
+
+.search {
+  width: 70%;
+  margin: 0 auto; }
 
 .q {
   z-index: 10;
@@ -217,3 +234,11 @@ p {
 
 .container {
   margin: 60px; }
+
+path {
+  fill: white; }
+
+.particularFilm img {
+  display: inline;
+  width: 45%;
+  position: relative; }
