@@ -43,6 +43,11 @@ app.getMovie = function(Title) {
 
 // loop to display movies that match search query
 app.displayTitle = function(results) {
+
+	$( '#displayResults' ).empty();
+
+	$('#film-input').val('');
+
 	var numMovies = results.length;
 	for (i = 0; i < numMovies; i++) {
 		console.log( 'ready to display ' + results[i].title + ' and rating ' + results[i].rating );
@@ -55,8 +60,8 @@ app.displayTitle = function(results) {
 		var div = $( '<div>' ).addClass( 'particularFilm' );
 		var p = $( '<p>' ).text( results[i].title );
 
-		app.imgYes = '<img src="assets/images/noun_40214_cc.png">' + '<p>PASS</p>';
-		app.imgNo = '<img src="assets/images/noun_43299_cc.png">' + '<p>FAIL</p>';
+		app.imgYes = '<img src="assets/images/noun_40214_cc.svg">' + '<p>PASS</p>';
+		app.imgNo = '<img src="assets/images/noun_43299_cc.svg">' + '<p>FAIL</p>';
 
 		// if/else for if movie passes or not
 		if ( rating == 3 ) {
@@ -78,7 +83,9 @@ app.displayTitle = function(results) {
 		$( '#displayResults' ).append(div);
 
 		// clear old results when a new query is submitted
-
+		// $( '.search' ).on( 'submit',
+   			 
+  //  		 });
 		// when text is added to search form stay visible
 
 		// make an array of different movie screen caps to cylce through as backgrounds  and be suggestions for movies to watch that pass the bechdel test
