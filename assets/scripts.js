@@ -7,7 +7,6 @@ app.init = function(){
 		e.preventDefault();
 		var Title = $('.q').val();
 		$('').focus();
-		console.log(Title);
 		app.getMovie(Title);
 		//app.getMovie(Title);
 	}); // end function(e);
@@ -28,8 +27,7 @@ app.getMovie = function(Title) {
 			numMovies = results.length;
 
 			if (numMovies === 0) {
-				console.log("nothing");
-				$('#displayResults').after('<p>¯\\_(ツ)_/¯ Looks like nothing matches. Try again.</p>');
+				$('#displayResults').after('<p>¯\\_(ツ)_/¯ </p><p>Looks like nothing matches. Try again.</p>');
 			}
  			app.displayTitle(results);
 		}
@@ -44,6 +42,7 @@ app.displayTitle = function(results) {
 
 	var numMovies = results.length;
 
+	// loop through all movies that match search result
 	for (i = 0; i < numMovies; i++) {
 		console.log( 'ready to display ' + results[i].title + ' and rating ' + results[i].rating );
 
@@ -53,22 +52,18 @@ app.displayTitle = function(results) {
  
 		// store information in html elements to add into page
 		var div = $( '<div>' ).addClass( 'particularFilm', 'clearfix' );
-		var p = $( '<p class="moTitle">' ).text( results[i].title );
+		var p = $( '<p class="movTitle">' ).text( movies );
 
 		// set variable to return in different instances
-		app.imgYes = '<div class="imf-l"><img src="assets/images/noun_40214_cc.svg"></div>' + '<div class="text-r"><p class="yesGO">PASS</p></div>';
-		app.imgNo = '<div class="imf-l"<img src="assets/images/noun_43299_cc.svg"></div>' + '<div class="text-r"><p class="noStop">FAIL</p></div>';
-		app.imgNone = '<p>¯\_(ツ)_/¯ Looks like nothing matches. Try again.</p>';
+		app.imgYes = '<div class="img-l"><img src="assets/images/noun_40214_cc.svg"></div>' + '<div class="text-r"><p class="yesGO">PASS</p></div>';
+
+		app.imgNo = '<div class="img-l"><img src="assets/images/noun_43299_cc.svg"></div>' + '<div class="text-r"><p class="noStop">FAIL</p></div>';
 
 		// if/else for if movie passes or not
 		if ( rating == 3 ) {
 			//display affirmation
 			console.log( 'it passes!' );
 			div.append(app.imgYes);
-		} else if ( results == undefined || results == null || results.length === 0) {
-			// no results, try again
-			console.log( 'there are no results' );
-			div.append(app.imgNone);	
 		} else {
 			console.log( 'this movie may not have and strong female characters. Why don\'t you try something else.' );
 			//display negative reading
@@ -85,7 +80,48 @@ app.displayTitle = function(results) {
 	}; // end for loop
 }; //end app.dispayTitle():
 
+// hide and reveal menu
+$.fn.menu = function(){
+	$(this).click(function(e) {
+		e.preventDefault();
+
+		// html for the menu
+		var menuHTML =
+		'<div id="theMenu">' +
+			'<p>Does it pass the Bechdel test was made using the Bechdel Test API.</p>' +
+			'<p>If your film wasn\'t returned, go to go to their website to add a film and pass/fail, or browse a complete list of the movies that users have rated.</p>' +
+			'<p><a href="http://bechdeltest.com/">bechdeltest.com</a></p>'
+		'</div>';
+
+		// add html to body but hide it
+		$(menuHTML).hide().appendTo('body').fadeIn(200);
+
+
+		var menuShow = $('#theMenu');
+
+		// and fadeout menu on click and escape
+		menuShow.on('click', function() {
+			console.log('click');
+			$(this).fadeOut(300, function() {
+				this.remove();
+			});
+		});
+
+		$(document).keyup(function(e) {
+			if (e.keyCode == 27 ) {
+				console.log('esc');
+				menuShow.fadeOut(300, function() {
+					this.remove();
+				});
+			}
+		});
+
+	}); // 
+};
+
+
 
 $(function(){
 	app.init();
+	$( '.clickMe' ).menu();
 });//end doc ready

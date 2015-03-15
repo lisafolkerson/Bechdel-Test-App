@@ -150,6 +150,11 @@ html, body {
   width: 90%;
   margin: 0 auto; }
 
+.clickMe a {
+  float: right;
+  text-decoration: none;
+  color: white; }
+
 p {
   font-family: 'Lato', sans-serif;
   font-size: 2.5rem;
@@ -165,6 +170,15 @@ p {
   text-shadow: 0 1px 3px black;
   text-align: center;
   line-height: 1.5rem; }
+
+#theMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: RGBA(130, 95, 105, 1);
+  text-align: center; }
 
 .search {
   width: 70%;
