@@ -56,8 +56,8 @@ app.displayTitle = function(results) {
 		var p = $( '<p class="moTitle">' ).text( results[i].title );
 
 		// set variable to return in different instances
-		app.imgYes = '<img src="assets/images/noun_40214_cc.svg">' + '<p class="yesGO">PASS</p>';
-		app.imgNo = '<img src="assets/images/noun_43299_cc.svg">' + '<p class="noStop">FAIL</p>';
+		app.imgYes = '<div class="imf-l"><img src="assets/images/noun_40214_cc.svg"></div>' + '<div class="text-r"><p class="yesGO">PASS</p></div>';
+		app.imgNo = '<div class="imf-l"<img src="assets/images/noun_43299_cc.svg"></div>' + '<div class="text-r"><p class="noStop">FAIL</p></div>';
 		app.imgNone = '<p>¯\_(ツ)_/¯ Looks like nothing matches. Try again.</p>';
 
 		// if/else for if movie passes or not
