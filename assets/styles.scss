@@ -166,32 +166,40 @@ svg {
 }
 
 .particularFilm {
-
-  .movTitle {
-    // text-align: center;
-    // margin: 0 auto;
-    // position: absolute;
-    // left: 55%;
-    // top: 100%;
-    // max-width: 200px;
-    // line-height: 3.5rem;
-  }
-
-  .yesGO, .noStop {
-    // left: -191px;
-    // top: -27px;
-  }
+  display: inline-block;
+  width: 100%;
 
   img {
+    height: 100%;
+    width: 100%;
     display: inline;
-    width: 45%;
     position: relative;
   }
 
-  p {
-    // display: inline;
-    // position: relative;
-    // margin: 0;
-    // padding: 0;
+  .img-l {
+    width: 49%;
+    padding-right: 1%;
+    float: left;
+    height: 100%;
+  }
+
+  .text-r {
+    float: left;
+    height: 100%;
+    transform: translateY(50%);
+  }
+
+  .movTitle {
+    display: inline-block;
+    text-align: left;
+    width: 50%;
+    line-height: 1.5;
+    transform: translateY(50%);
+  }
+
+  .yesGO, .noStop {
+    display: inline-block;
+    text-align: center;
+    transform: translateY(50%);
   }
 }

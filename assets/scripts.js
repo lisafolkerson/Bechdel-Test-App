@@ -80,6 +80,13 @@ app.displayTitle = function(results) {
 	}; // end for loop
 }; //end app.dispayTitle():
 
+
+
+//*//*//*///////////
+// T H E  M E N U //
+//*//*//*///////////
+
+
 // hide and reveal menu
 $.fn.menu = function(){
 	$(this).click(function(e) {

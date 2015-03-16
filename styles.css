@@ -253,7 +253,30 @@ p {
 svg {
   fill: white; }
 
-.particularFilm img {
-  display: inline;
-  width: 45%;
-  position: relative; }
+.particularFilm {
+  display: inline-block;
+  width: 100%; }
+  .particularFilm img {
+    height: 100%;
+    width: 100%;
+    display: inline;
+    position: relative; }
+  .particularFilm .img-l {
+    width: 49%;
+    padding-right: 1%;
+    float: left;
+    height: 100%; }
+  .particularFilm .text-r {
+    float: left;
+    height: 100%;
+    transform: translateY(50%); }
+  .particularFilm .movTitle {
+    display: inline-block;
+    text-align: left;
+    width: 50%;
+    line-height: 1.5;
+    transform: translateY(50%); }
+  .particularFilm .yesGO, .particularFilm .noStop {
+    display: inline-block;
+    text-align: center;
+    transform: translateY(50%); }
