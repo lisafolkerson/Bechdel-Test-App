@@ -28,7 +28,7 @@ app.getMovie = function(Title) {
 
 			if (numMovies === 0) {
 
-				$('#displayResults').after('<p class="shrug">¯\\_(ツ)_/¯ </p><p>Looks like nothing matches. Try again.</p>');
+				$('.shrugHouse').html('<p class="shrug">¯\\_(ツ)_/¯ </p><p class="shrug">Looks like nothing matches. Try again.</p>');
 			}
  			app.displayTitle(results);
 		}
@@ -38,7 +38,7 @@ app.getMovie = function(Title) {
 // loop to display movies that match search query
 app.displayTitle = function(results) {
 	// clear old results and form info so new information can be searched as results are displayed
-	$( '#displayResults' ).empty();
+	$( '#displayResults').empty();
 	$('#film-input').val('');
 
 	var numMovies = results.length;
@@ -75,9 +75,16 @@ app.displayTitle = function(results) {
 		div.append(p);
 		// add div with all results to main page
 		$( '#displayResults' ).append(div);
+		//scrollTop
+		 $('html,body').animate({
+        	scrollTop: $('#displayResults' ).offset().top -200
+    	});
+		$('.shrug').html('');
 
 	}; // end for loop
 }; //end app.dispayTitle():
+
+
 
 
 

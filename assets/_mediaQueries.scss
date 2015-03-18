@@ -1,0 +1,72 @@
+//*//*//*//////////////////////
+// M E D I A   Q U E R I E S //
+//*//*//*//////////////////////
+
+
+@media (max-width: 530px) {
+	h1 {
+		font-size: 4rem;
+		line-height: 1.3rem;
+	}
+
+	.bold {
+		font-size: 3.4rem;
+	}
+
+	.mainTagline {
+		width: 90%;
+		font-size: 2.2rem;
+	}
+
+	.search {
+		width:98%;
+	  	font-size: 2.3rem;
+	}
+
+	.container {
+		width: 100%;
+		margin: 0;
+	}
+
+	.particularFilm {
+
+		.img-l {
+			width: 107%;
+		}
+
+		.text-r {
+			transform: none;
+			height:inherit;
+			width: 100%;
+
+		}
+
+		.yesGO, .noStop {
+			margin: 0;
+			transform: none;
+		}
+
+		.movTitle {
+			width: 100%;
+			margin-top: 0;
+			margin-bottom: 30px;
+			display: inline;
+			text-align: center;
+		}
+
+		#theMenu {
+			overflow: scroll;
+		}
+
+		.menuWrapper {
+			width: 90%;
+			overflow: scroll;
+
+			p {
+				font-size: 
+			}
+		}
+	}
+
+
+} // end 530 MQ

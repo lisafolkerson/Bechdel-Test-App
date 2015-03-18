@@ -163,8 +163,44 @@ header {
   right: 6%;
   font-size: 3rem; }
 
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg); }
+
+  to {
+    -moz-transform: rotate(360deg); } }
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg); }
+
+  to {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+
+  to {
+    transform: rotate(360deg); } }
+
 .clickMe a:hover {
-  font-size: 3.3rem; }
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 4000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 4000ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: 4000ms;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  animation-name: spin;
+  animation-duration: 4000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
 
 p {
   font-family: 'Lato', sans-serif;
@@ -198,7 +234,8 @@ p {
   background: #00d67f;
   text-align: center;
   transition: all 0.3s ease;
-  z-index: 10; }
+  z-index: 10;
+  overflow: scroll; }
   #theMenu .close {
     float: right;
     text-decoration: none;
@@ -349,3 +386,39 @@ svg {
   text-shadow: 0 1px 3px black;
   text-align: center;
   line-height: 1.5rem; }
+
+@media (max-width: 530px) {
+  h1 {
+    font-size: 4rem;
+    line-height: 1.3rem; }
+  .bold {
+    font-size: 3.4rem; }
+  .mainTagline {
+    width: 90%;
+    font-size: 2.2rem; }
+  .search {
+    width: 98%;
+    font-size: 2.3rem; }
+  .container {
+    width: 100%;
+    margin: 0; }
+  .particularFilm .img-l {
+    width: 107%; }
+  .particularFilm .text-r {
+    transform: none;
+    height: inherit;
+    width: 100%; }
+  .particularFilm .yesGO, .particularFilm .noStop {
+    margin: 0;
+    transform: none; }
+  .particularFilm .movTitle {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 30px;
+    display: inline;
+    text-align: center; }
+  .particularFilm #theMenu {
+    overflow: scroll; }
+  .particularFilm .menuWrapper {
+    width: 90%;
+    overflow: scroll; } }
