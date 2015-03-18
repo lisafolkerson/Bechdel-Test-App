@@ -148,9 +148,8 @@ html, body {
   text-align: center;
   line-height: 1.5rem;
   width: 90%;
-  margin: 0 auto;
-  margin-top: 20px;
-  border: 2px solid white; }
+  margin: 20px auto;
+  border: 4px solid white; }
 
 header {
   padding-top: 5%; }
@@ -196,8 +195,21 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background: RGBA(0, 214, 127, 1);
-  text-align: center; }
+  background: #00d67f;
+  text-align: center;
+  transition: all 0.3s ease;
+  z-index: 10; }
+  #theMenu .close {
+    float: right;
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    top: 0%;
+    right: 2%;
+    font-size: 3rem;
+    margin: 0; }
+  #theMenu .close:hover {
+    font-size: 3.3rem; }
   #theMenu .menuWrapper {
     width: 60%;
     margin: 10% auto; }
@@ -206,11 +218,18 @@ p {
     text-align: center;
     line-height: 1.6;
     font-weight: 500; }
-  #theMenu .linkOut, #theMenu .linkOut:visited a {
+  #theMenu .linkOut {
+    margin: 30px auto; }
+  #theMenu .linkOut a, #theMenu .linkOut:visited a {
     color: white;
     padding: 10px 15px;
     border: 2px solid white;
-    display: inline; }
+    display: inline;
+    text-decoration: none; }
+  #theMenu .linkOut:hover a {
+    background: tomato;
+    border: 2px solid tomato;
+    transition: all 0.3s ease; }
 
 .search {
   width: 70%;
@@ -232,7 +251,7 @@ p {
 .q:focus, .q:hover {
   opacity: 1;
   transition-delay: 0.3s;
-  background: goldenrod;
+  background: tomato;
   outline: none;
   border: none; }
 
@@ -271,7 +290,7 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  height: 0.1rem;
+  height: 2px;
   background: ghostwhite;
   transform-origin: 50% 0%;
   transition: transform 0.3s; }
@@ -285,9 +304,13 @@ p {
 svg {
   fill: white; }
 
+.particularFilm:last-child {
+  border: none; }
+
 .particularFilm {
   display: inline-block;
-  width: 100%; }
+  width: 100%;
+  border-bottom: 3px solid #00d67f; }
   .particularFilm img {
     height: 100%;
     width: 100%;
@@ -311,4 +334,18 @@ svg {
   .particularFilm .yesGO, .particularFilm .noStop {
     display: inline-block;
     text-align: center;
-    transform: translateY(50%); }
+    transform: translateY(50%);
+    line-height: 1.2; }
+  .particularFilm .yesGO {
+    border-bottom: 4px solid #00d67f; }
+  .particularFilm .noStop {
+    border-bottom: 4px solid tomato; }
+
+.shrug {
+  font-size: 3rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  color: ghostwhite;
+  text-shadow: 0 1px 3px black;
+  text-align: center;
+  line-height: 1.5rem; }

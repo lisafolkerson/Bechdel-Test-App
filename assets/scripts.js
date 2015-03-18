@@ -28,9 +28,7 @@ app.getMovie = function(Title) {
 
 			if (numMovies === 0) {
 
-				var shrug = '<p class="shrug">¯\\_(ツ)_/¯ </p><p>Looks like nothing matches. Try again.</p>';
-
-				$('#displayResults').append('shrug');
+				$('#displayResults').after('<p class="shrug">¯\\_(ツ)_/¯ </p><p>Looks like nothing matches. Try again.</p>');
 			}
  			app.displayTitle(results);
 		}
@@ -96,11 +94,11 @@ $.fn.menu = function(){
 		// html for the menu
 		var menuHTML =
 		'<div id="theMenu">' +
-			'<div class="menuWrapper">' +
+			'<a href="#" class="close">&times;</a><div class="menuWrapper">' +
 			'<p>Does it pass the Bechdel test was made using the Bechdel Test API.</p>' +
-			'<p>If your film wasn\'t returned, go to go to their website to add a film and pass/fail, or browse a complete list of the movies that users have rated.</p>' +
-			'<p class="linkOut"><a href="http://bechdeltest.com/">bechdeltest.com</a></p>'
-		'</div></div>';
+			'<p>If your film wasn\'t returned, go to go to their website to add a film and rating, or browse a complete list of the movies that users have rated.</p>' +
+			'<p class="linkOut"><a href="http://bechdeltest.com/">bechdeltest.com</a></p>' +
+		'<p>This site was made with love by</p><p class="linkOut"><a href="http://lisafolkerson.com/">Lisa Folkerson</a></p><p>The still in the background is from the 1996 film <em>Girls Town</em> and the nouns are made by <em>Zuzanna Nebes</em> and <em>Rikki Lorie</em> c/o the Noun Project</p></div></div>';
 
 		// add html to body but hide it
 		$(menuHTML).hide().appendTo('body').fadeIn(300);
@@ -111,7 +109,7 @@ $.fn.menu = function(){
 		// and fadeout menu on click and escape
 		menuShow.on('click', function() {
 			console.log('click');
-			$(this).fadeOut(300, function() {
+			$(this).fadeOut(400, function() {
 				this.remove();
 			});
 		});
@@ -119,7 +117,7 @@ $.fn.menu = function(){
 		$(document).keyup(function(e) {
 			if (e.keyCode == 27 ) {
 				console.log('esc');
-				menuShow.fadeOut(300, function() {
+				menuShow.fadeOut(400, function() {
 					this.remove();
 				});
 			}
