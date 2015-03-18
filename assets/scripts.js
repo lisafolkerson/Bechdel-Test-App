@@ -24,10 +24,13 @@ app.getMovie = function(Title) {
 				title : encodeURI(Title), 
 			},
 		success : function(results){
-			numMovies = results.length;
+			numMovies = encodeURI(results).length;
 
 			if (numMovies === 0) {
-				$('#displayResults').after('<p>¯\\_(ツ)_/¯ </p><p>Looks like nothing matches. Try again.</p>');
+
+				var shrug = '<p class="shrug">¯\\_(ツ)_/¯ </p><p>Looks like nothing matches. Try again.</p>';
+
+				$('#displayResults').append('shrug');
 			}
  			app.displayTitle(results);
 		}
@@ -52,12 +55,12 @@ app.displayTitle = function(results) {
  
 		// store information in html elements to add into page
 		var div = $( '<div>' ).addClass( 'particularFilm', 'clearfix' );
-		var p = $( '<p class="movTitle">' ).text( movies );
+		var p = $( '<p class="movTitle">' ).html( movies );
 
 		// set variable to return in different instances
 		app.imgYes = '<div class="img-l"><img src="assets/images/noun_40214_cc.svg"></div>' + '<div class="text-r"><p class="yesGO">PASS</p></div>';
 
-		app.imgNo = '<div class="img-l"><img src="assets/images/noun_43299_cc.svg"></div>' + '<div class="text-r"><p class="noStop">FAIL</p></div>';
+		app.imgNo = '<div class="img-l"><img src="assets/images/noun_43299_cc.svg"></div> <div class="text-r"><p class="noStop">FAIL</p></div>';
 
 		// if/else for if movie passes or not
 		if ( rating == 3 ) {
@@ -74,8 +77,6 @@ app.displayTitle = function(results) {
 		div.append(p);
 		// add div with all results to main page
 		$( '#displayResults' ).append(div);
-
-		// make an array of different movie screen caps to cylce through as backgrounds  and be suggestions for movies to watch that pass the bechdel test
 
 	}; // end for loop
 }; //end app.dispayTitle():
@@ -95,13 +96,14 @@ $.fn.menu = function(){
 		// html for the menu
 		var menuHTML =
 		'<div id="theMenu">' +
+			'<div class="menuWrapper">' +
 			'<p>Does it pass the Bechdel test was made using the Bechdel Test API.</p>' +
 			'<p>If your film wasn\'t returned, go to go to their website to add a film and pass/fail, or browse a complete list of the movies that users have rated.</p>' +
-			'<p><a href="http://bechdeltest.com/">bechdeltest.com</a></p>'
-		'</div>';
+			'<p class="linkOut"><a href="http://bechdeltest.com/">bechdeltest.com</a></p>'
+		'</div></div>';
 
 		// add html to body but hide it
-		$(menuHTML).hide().appendTo('body').fadeIn(200);
+		$(menuHTML).hide().appendTo('body').fadeIn(300);
 
 
 		var menuShow = $('#theMenu');
