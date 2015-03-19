@@ -27,7 +27,7 @@ app.getMovie = function(Title) {
 			numMovies = encodeURI(results).length;
 
 			if (numMovies === 0) {
-
+				//if no movies display this message
 				$('.shrugHouse').html('<p class="shrug">¯\\_(ツ)_/¯ </p><p class="shrug">Looks like nothing matches. Try again.</p>');
 			}
  			app.displayTitle(results);
@@ -108,7 +108,7 @@ $.fn.menu = function(){
 		'<p>This site was made with love by</p><p class="linkOut"><a href="http://lisafolkerson.com/">Lisa Folkerson</a></p><p>The still in the background is from the 1996 film <em>Girls Town</em> and the nouns are made by <em>Zuzanna Nebes</em> and <em>Rikki Lorie</em> c/o the Noun Project</p></div></div>';
 
 		// add html to body but hide it
-		$(menuHTML).hide().appendTo('body').fadeIn(300);
+		$(menuHTML).hide().appendTo('body').slideDown(400);
 
 
 		var menuShow = $('#theMenu');
@@ -116,7 +116,7 @@ $.fn.menu = function(){
 		// and fadeout menu on click and escape
 		menuShow.on('click', function() {
 			console.log('click');
-			$(this).fadeOut(400, function() {
+			$(this).slideUp(400, function() {
 				this.remove();
 			});
 		});
@@ -124,7 +124,7 @@ $.fn.menu = function(){
 		$(document).keyup(function(e) {
 			if (e.keyCode == 27 ) {
 				console.log('esc');
-				menuShow.fadeOut(400, function() {
+				menuShow.slideUp(400, function() {
 					this.remove();
 				});
 			}
