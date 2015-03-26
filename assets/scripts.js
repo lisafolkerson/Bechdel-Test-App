@@ -8,7 +8,6 @@ app.init = function(){
 		var Title = $('.q').val();
 		$('').focus();
 		app.getMovie(Title);
-		//app.getMovie(Title);
 	}); // end function(e);
 };// end app.init();
 

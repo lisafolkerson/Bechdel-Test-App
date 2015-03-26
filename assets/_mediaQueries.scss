@@ -4,9 +4,13 @@
 
 
 @media (max-width: 530px) {
+	.menuText {
+		display: none;
+	}
+
 	h1 {
 		font-size: 4rem;
-		line-height: 1.3rem;
+		line-height: 2rem;
 	}
 
 	.bold {
